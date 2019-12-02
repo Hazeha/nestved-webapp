@@ -216,15 +216,15 @@
             </table>
 
             <h4>Antal Ejendomme</h4>
-            <p>God Tilstand <strong>560</strong></p>
+            <div class="progress-container">
+         
             <progress class="progress is-success" value="60" max="100"></progress>
-            <p>Medium Tilstand <strong>123</strong></p>
+            
             <progress class="progress is-warning" value="30" max="100">75%</progress>
-            <p>Dårlig Tilstand <strong>42</strong></p>
+            
             <progress class="progress is-danger" value="10" max="100">90%</progress>
-
-            <h4>Samlet Vurdering på 750 Ejendomme</h4>
-            <progress class="progress is-success" value="79" max="100"></progress>
+            </div>
+            
         </div>
         <!--TODO Lste over ejendomme, Skal laves så de rigtige boliger kommer frem via søgningen-->
         <div class="content">
@@ -237,7 +237,7 @@
                         <thead>
                             <tr>
                                 <th>Tilstand</th>
-                                <th>vedligeholdelse</th>
+                                <th>Vedligeholdelse</th>
                                 <th>Forurening</th>
                             </tr>
                         </thead>
