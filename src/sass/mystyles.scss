@@ -1,9 +1,29 @@
 
 
 
+$link: white;
+$link-hover: #BD5A1C;
+$primary: #024260;
 
-$primary: black;
+.progress-container {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    height: 500px;
+    z-index: 100;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+    .progress {
+        width: 300px;
+        display: block;
+        height: 120px;
+        border-radius: 0px;
+       
 
+    }
+}
 
 @charset "utf-8";
 @import "../../node_modules/bulma/bulma.sass";
