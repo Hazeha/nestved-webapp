@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <!--TODO Anvendelses kode skal videregives så koden kan anvendes-->
         <button type="button" class="button is-primary is-large anv-code" @click="showModal">
             Anvendelseskode
         </button>
@@ -173,7 +174,7 @@
             </table>
         </div>
 
-
+        <!--TODO Samlet Resultat - Skal der laves funktioner til.-->
         <div class="card content">
             <div class="card-header">
                 <h2>Samlet Resultat</h2>
@@ -225,7 +226,7 @@
             <h4>Samlet Vurdering på 750 Ejendomme</h4>
             <progress class="progress is-success" value="79" max="100"></progress>
         </div>
-
+        <!--TODO Lste over ejendomme, Skal laves så de rigtige boliger kommer frem via søgningen-->
         <div class="content">
             <h2>Liste over Ejendomme</h2>
             <div class="card">
