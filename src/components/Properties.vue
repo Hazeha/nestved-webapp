@@ -1,17 +1,23 @@
 <template>
     <div class="container">
         <!--TODO Anvendelses kode skal videregives så koden kan anvendes-->
-        <button type="button" class="button is-primary is-large anv-code" @click="showModal">
-            Anvendelseskode
+<h1>Filter din søgning</h1>
+
+        <!--TODO This needs to be made into a component-->
+        <div class="card content">
+            <div class="card-header columns">
+                <div class="column">
+                <h2>Tilstand</h2>
+                </div>
+                <div class="column is-one-quarter column-costum">
+        <button type="button" class="anv-code btn-all-reset" @click="showModal">
+            <img src="../assets/tool.png">
         </button>
 
         <UseageCode v-show="isModalVisible" @close="closeModal"/>
 
-        <!--TODO This needs to be made into a component-->
-        <div class="card content">
-            <div class="card-header">
-                <h2>Tilstand</h2>
 
+       
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                         <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu4">+ Tilføj Kategori</button>
@@ -53,6 +59,7 @@
                     </div>
                 </div>
             </div>
+            </div>
 
             <table class="table card-content">
                 <thead>
@@ -92,9 +99,60 @@
         </div>
         <!--TODO This needs to be made into a component-->
         <div class="card content">
-            <div class="card-header">
+            <div class="card-header columns">
+                <div class="column">
                 <h2>Energi</h2>
-                <button class="button is-primary level-item">+ Tilføj Kategori</button>
+                </div>
+                <div class="column is-one-quarter column-costum">
+        <button type="button" class="anv-code btn-all-reset" @click="showModal">
+            <img src="../assets/tool.png">
+        </button>
+
+        <UseageCode v-show="isModalVisible" @close="closeModal"/>
+
+
+       
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu4">+ Tilføj Kategori</button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <h4>Kategorier</h4>
+                                <label class="checkbox"><input type="checkbox">
+                                    Teknisk Anlæg
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Udv. belægning
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Facade og Murværk
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tag
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Udhæng og gavle
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tagdækning
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tagrender
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Vinduer og udv. døre
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Fundament og sokkel
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
             <table class="table card-content">
                 <thead>
@@ -133,10 +191,60 @@
         </div>
         <!--TODO This needs to be made into a component-->
         <div class="card content">
-            <div class="card-header">
+            <div class="card-header columns">
+                <div class="column">
                 <h2>Helpdesk</h2>
-                <button class="button is-primary level-item">+ Tilføj Kategori</button>
+                </div>
+                <div class="column is-one-quarter column-costum">
+        <button type="button" class="anv-code btn-all-reset" @click="showModal">
+            <img src="../assets/tool.png">
+        </button>
 
+        <UseageCode v-show="isModalVisible" @close="closeModal"/>
+
+
+       
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu4">+ Tilføj Kategori</button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <h4>Kategorier</h4>
+                                <label class="checkbox"><input type="checkbox">
+                                    Teknisk Anlæg
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Udv. belægning
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Facade og Murværk
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tag
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Udhæng og gavle
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tagdækning
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tagrender
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Vinduer og udv. døre
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Fundament og sokkel
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
             <table class="table card-content">
                 <thead>
@@ -310,14 +418,14 @@
 </template>
 
 <script>
-    import UseageCode from './properties/UseageCode.vue'
+   import UseageCode from './properties/UseageCode.vue'
 
 
     export default {
         name: "Properties",
 
-        components: {
-            UseageCode
+       components: {
+          UseageCode
         },
         data(){
             return{
@@ -340,7 +448,15 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+
+
+h1 {
+    font-size: 2rem;
+    margin: 40px 0px;
+}
+
  .main-element{
      display: flex;
      justify-content: space-evenly;
@@ -348,10 +464,24 @@
 
     .card-header{
         justify-content: space-between;
-        padding: 10px 15px 0px 15px;
+        padding: 40px 20px;
+        align-items: center;
+        box-shadow: none;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            height: 1px;
+            width: calc(100% - 70px);
+            content:'';
+            bottom: 20px;
+            left: 35px;
+            background-color: black;
+
+        }
     }
     .anv-code{
-        margin: 25px;
+        margin: 40px 0px;
     }
     .prop-card{
         display: flex;
@@ -363,4 +493,29 @@
     .prop-img{
         width: 25%;
     }
+
+    .btn-all-reset {
+        all: unset;
+        cursor: pointer;
+        margin-right: 30px;
+        img {
+            height: 50px;
+        }
+    }
+
+    .column-costum {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
 </style>
+
+
+
+
+
+
+
+
+
