@@ -1,17 +1,28 @@
-.progress-container {
-  transform: rotate(-90deg);
-  transform-origin: center;
-  height: 500px;
-  z-index: 100;
+/* Progress bar */
+.progress_bar_wrapper h4 {
+  margin-left: 20px; }
+
+.progress_align {
   justify-content: flex-end;
-  align-items: center;
-  display: flex;
-  flex-direction: column; }
-  .progress-container .progress {
-    width: 300px;
-    display: block;
-    height: 120px;
-    border-radius: 0px; }
+  margin-right: 100px;
+  display: flex; }
+  .progress_align p {
+    flex-basis: 118px;
+    text-align: center;
+    margin-left: 1.5rem; }
+  .progress_align .progress-container {
+    height: 500px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    transform: rotate(-90deg);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: -30px; }
+    .progress_align .progress-container .progress {
+      height: 30%;
+      border-radius: 0px; }
 
 /*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {

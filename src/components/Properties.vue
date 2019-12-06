@@ -323,15 +323,9 @@
                 </tbody>
             </table>
 
-            <h4>Antal Ejendomme</h4>
-            <div class="progress-container">
-         
-            <progress class="progress is-success" value="60" max="100"></progress>
-            
-            <progress class="progress is-warning" value="30" max="100">75%</progress>
-            
-            <progress class="progress is-danger" value="10" max="100">90%</progress>
-            </div>
+            <Diagram />
+
+
             
         </div>
         <!--TODO Lste over ejendomme, Skal laves så de rigtige boliger kommer frem via søgningen-->
@@ -419,13 +413,15 @@
 
 <script>
    import UseageCode from './properties/UseageCode.vue'
-
+    import Diagram from './Diagram.vue'
 
     export default {
         name: "Properties",
 
+
        components: {
-          UseageCode
+          UseageCode,
+          Diagram
         },
         data(){
             return{

@@ -5,25 +5,57 @@ $link: white;
 $link-hover: #BD5A1C;
 $primary: #024260;
 
-.progress-container {
-    transform: rotate(-90deg);
-    transform-origin: center;
-    height: 500px;
-    z-index: 100;
-    justify-content: flex-end;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    
-    .progress {
-        width: 300px;
-        display: block;
-        height: 120px;
-        border-radius: 0px;
-       
 
+
+
+
+
+
+/* Progress bar */
+
+.progress_bar_wrapper {
+    h4 {
+        margin-left: 20px;
     }
 }
+
+.progress_align {
+    justify-content: flex-end;
+    margin-right: 100px;
+    display:flex;
+
+
+    p {
+        flex-basis: 118px;
+        text-align: center;
+        margin-left: 1.5rem;
+        
+    }
+    .progress-container {
+
+        height: 500px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        transform: rotate(-90deg);
+        width: 400px;
+        display: flex;
+        flex-direction:column;
+        justify-content: flex-end;
+        margin-top: -30px;
+        
+ 
+    
+        .progress {
+            height: 30%;
+            border-radius: 0px;
+        }
+     }
+
+}
+
+
+
+
 
 @charset "utf-8";
 @import "../../node_modules/bulma/bulma.sass";
