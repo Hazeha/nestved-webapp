@@ -7,89 +7,7 @@
 
         <UseageCode v-show="isModalVisible" @close="closeModal"/>
 
-        <!--TODO This needs to be made into a component-->
-        <div class="card content">
-            <div class="card-header">
-                <h2>Tilstand</h2>
-
-                <div class="dropdown is-hoverable">
-                    <div class="dropdown-trigger">
-                        <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu4">+ Tilføj Kategori</button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                        <div class="dropdown-content">
-                            <div class="dropdown-item">
-                                <h4>Kategorier</h4>
-                                <label class="checkbox"><input type="checkbox">
-                                    Teknisk Anlæg
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Udv. belægning
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Facade og Murværk
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Tag
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Udhæng og gavle
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Tagdækning
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Tagrender
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Vinduer og udv. døre
-                                </label>
-                                <label class="checkbox"><input type="checkbox">
-                                    Fundament og sokkel
-                                </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <table class="table card-content">
-                <thead>
-                <tr>
-                    <th title="Faktor">Faktor</th>
-                    <th title="Indmeldinger">Indmeldinger</th>
-                    <th title="Point">Point</th>
-                    <th title="Vægtning">Vægtning</th>
-                    <th title="Resultat">Resultat</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Tagrender m. Nedløb</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>Vinduer & udv. Døre</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>Fundament & Sokkel</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
+        <Tilstand/>
         <!--TODO This needs to be made into a component-->
         <div class="card content">
             <div class="card-header">
@@ -311,13 +229,15 @@
 
 <script>
     import UseageCode from './properties/UseageCode.vue'
+    import Tilstand from './properties/Tilstand.vue'
 
 
     export default {
         name: "Properties",
 
         components: {
-            UseageCode
+            UseageCode,
+            Tilstand
         },
         data(){
             return{
