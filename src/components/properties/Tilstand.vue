@@ -2,7 +2,7 @@
     <!--TODO This needs to be made into a component-->
     <div id="Tilstand" class="card content">
         <div class="card-header">
-            <h2>Tilstand</h2>
+            <h2>{{mainType}}</h2>
 
             <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">
@@ -12,32 +12,14 @@
                     <div class="dropdown-content">
                         <div class="dropdown-item">
                             <h4>Kategorier</h4>
-                            <label class="checkbox"><input type="checkbox" name="teknisk" v-model="isTeknik">
+                            <label class="checkbox"><input type="checkbox" name="value1" v-model="isValue1">
                                 Teknisk Anlæg
                             </label>
-                            <label class="checkbox"><input type="checkbox" name="belægning" v-model="isBelægning">
+                            <label class="checkbox"><input type="checkbox" name="value2" v-model="isValue2">
                                 Udv. belægning
                             </label>
-                            <label class="checkbox"><input type="checkbox" name="facade" v-model="isFacade">
+                            <label class="checkbox"><input type="checkbox" name="value3" v-model="isValue3">
                                 Facade og Murværk
-                            </label>
-                            <label class="checkbox"><input type="checkbox" name="tag" v-model="isTag">
-                                Tag
-                            </label>
-                            <label class="checkbox"><input type="checkbox" name="gavl" v-model="isGavl">
-                                Udhæng og gavle
-                            </label>
-                            <label class="checkbox"><input type="checkbox" name="tagdækning" v-model="isTagdækning">
-                                Tagdækning
-                            </label>
-                            <label class="checkbox"><input type="checkbox" name="tagrender" v-model="isTagrender">
-                                Tagrender
-                            </label>
-                            <label class="checkbox"><input type="checkbox" name="vinduer" v-model="isVinduer">
-                                Vinduer og udv. døre
-                            </label>
-                            <label class="checkbox"><input type="checkbox" name="fundament" v-model="isFundament">
-                                Fundament og sokkel
                             </label>
                         </div>
 
@@ -57,35 +39,41 @@
             </tr>
             </thead>
             <tbody>
-            <tr id="divForTeknisk" v-show="isTeknik">
-                <td>Tagrender m. Nedløb</td>
-                <td><div>{{meldingTeknik}}</div></td>
-                <td><div>{{pointTeknik}}</div></td>
-                <td><input type="range" min="0" max="100" step="1" v-model="rangeTeknik"> {{rangeTeknik}}%</td>
-                <td><div>{{resultTeknik}} Points</div></td>
-            </tr>
-            <tr>
-                <td>Vinduer & udv. Døre</td>
-                <td>3</td>
-                <td>68</td>
-                <td><input type="range"> 20%</td>
-                <td>68</td>
-            </tr>
-            <tr>
-                <td>Fundament & Sokkel</td>
-                <td>3</td>
-                <td>68</td>
-                <td><input type="range"> 20%</td>
-                <td>68</td>
-            </tr>
+            <keyResults
+                         keyID="categori1"
+                         v-show="isValue1"
+                         keyValue1="4"
+                         keyValue2="8"
+                         keyValue3="16"
+            >
+            </keyResults>
+
+            <keyResults
+                    keyID="categori2"
+                    v-show="isValue2"
+                    keyValue1="4"
+                    keyValue2="8"
+                    keyValue3="16"
+            >
+            </keyResults>
+
+            <keyResults
+                    keyID="categori3"
+                    v-show="isValue3"
+                    keyValue1="4"
+                    keyValue2="8"
+                    keyValue3="16"
+            >
+            </keyResults>
+
             </tbody>
             <tfoot>
                 <tr>
                     <th>Samlet Resultat</th>
-                    <th><div>{{meldingResult}}</div></th>
-                    <th><div>{{pointResult}}</div></th>
+                    <th><div>{{resultValue1}}</div></th>
+                    <th><div>{{resultValue2}}</div></th>
                     <th></th>
-                    <th>{{resultResult}}</th>
+                    <th>{{resultValue3}}</th>
                 </tr>
             </tfoot>
         </table>
@@ -94,24 +82,31 @@
 </template>
 
 <script>
+    import keyResults from './keyResults.vue'
+
     export default {
         name: "Tilstand",
-
+        components: {
+            keyResults
+        },
+        props:{
+            mainType: String
+        },
         data(){
             return{
-                isTeknik: true,
-                meldingTeknik: 6,
-                pointTeknik: 10,
-                rangeTeknik: 20,
-                resultTeknik: 75,
+                isValue1: true,
+                isValue2: true,
+                isValue3: true,
 
-
-                meldingResult: 100,
-                pointResult: 123,
-                resultResult: 1000
+                resultValue1: 100,
+                resultValue2: 123,
+                resultValue3: 1000
             }
 
         },
+        methods:{
+
+        }
     }
 
 

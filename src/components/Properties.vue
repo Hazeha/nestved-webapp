@@ -1,149 +1,13 @@
 <template>
     <div class="container">
         <!--TODO Anvendelses kode skal videregives så koden kan anvendes-->
-        <button type="button" class="button is-primary is-large anv-code" @click="showModal">
-            Anvendelseskode
-        </button>
+<h1>Filter din søgning</h1>
 
-        <UseageCode v-show="isModalVisible" @close="closeModal"/>
-
-        <Tilstand/>
-        <!--TODO This needs to be made into a component-->
-        <div class="card content">
-            <div class="card-header">
-                <h2>Energi</h2>
-                <button class="button is-primary level-item">+ Tilføj Kategori</button>
-            </div>
-            <table class="table card-content">
-                <thead>
-                <tr>
-                    <th title="Faktor">Faktor</th>
-                    <th title="Indmeldinger">Indmeldinger</th>
-                    <th title="Point">Point</th>
-                    <th title="Vægtning">Vægtning</th>
-                    <th title="Resultat">Resultat</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Tagrender m. Nedløb</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>Vinduer & udv. Døre</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>Fundament & Sokkel</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <!--TODO This needs to be made into a component-->
-        <div class="card content">
-            <div class="card-header">
-                <h2>Helpdesk</h2>
-                <button class="button is-primary level-item">+ Tilføj Kategori</button>
-
-            </div>
-            <table class="table card-content">
-                <thead>
-                <tr>
-                    <th title="Faktor">Faktor</th>
-                    <th title="Indmeldinger">Indmeldinger</th>
-                    <th title="Point">Point</th>
-                    <th title="Vægtning">Vægtning</th>
-                    <th title="Resultat">Resultat</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Tagrender m. Nedløb</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>Vinduer & udv. Døre</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                <tr>
-                    <td>Fundament & Sokkel</td>
-                    <td>3</td>
-                    <td>68</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
+        <Tilstand mainType="Tilstand"></Tilstand>
+        <Tilstand mainType="Energi"></Tilstand>
+        <Tilstand mainType="Helpdesk"></Tilstand>
         <!--TODO Samlet Resultat - Skal der laves funktioner til.-->
-        <div class="card content">
-            <div class="card-header">
-                <h2>Samlet Resultat</h2>
-            </div>
-
-            <table class="table card-content">
-                <thead>
-                <tr>
-                    <th title="Faktor">Faktor</th>
-                    <th title="Indmeldinger">Point</th>
-                    <th title="Point">Vægtning</th>
-                    <th title="Vægtning">Samlet Point</th>
-                    <th title="Resultat">Resultat</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Tilstand</td>
-                    <td>3</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                    <td><h1 style="color: green">⦿</h1></td>
-                </tr>
-                <tr>
-                    <td>Energi</td>
-                    <td>3</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                    <td><h1 style="color: red">⦿</h1></td>
-                </tr>
-                <tr>
-                    <td>Helpdesk</td>
-                    <td>3</td>
-                    <td><input type="range"> 20%</td>
-                    <td>68</td>
-                    <td><h1 style="color: yellow">⦿</h1></td>
-                </tr>
-                </tbody>
-            </table>
-
-            <h4>Antal Ejendomme</h4>
-            <p>God Tilstand <strong>560</strong></p>
-            <progress class="progress is-success" value="60" max="100"></progress>
-            <p>Medium Tilstand <strong>123</strong></p>
-            <progress class="progress is-warning" value="30" max="100">75%</progress>
-            <p>Dårlig Tilstand <strong>42</strong></p>
-            <progress class="progress is-danger" value="10" max="100">90%</progress>
-
-            <h4>Samlet Vurdering på 750 Ejendomme</h4>
-            <progress class="progress is-success" value="79" max="100"></progress>
-        </div>
+        <totalResult></totalResult>
         <!--TODO Lste over ejendomme, Skal laves så de rigtige boliger kommer frem via søgningen-->
         <div class="content">
             <h2>Liste over Ejendomme</h2>
@@ -155,7 +19,7 @@
                         <thead>
                             <tr>
                                 <th>Tilstand</th>
-                                <th>vedligeholdelse</th>
+                                <th>Vedligeholdelse</th>
                                 <th>Forurening</th>
                             </tr>
                         </thead>
@@ -228,21 +92,18 @@
 </template>
 
 <script>
-    import UseageCode from './properties/UseageCode.vue'
+
     import Tilstand from './properties/Tilstand.vue'
-
-
+    import totalResult from './properties/totalResult.vue'
     export default {
         name: "Properties",
-
         components: {
-            UseageCode,
-            Tilstand
+            Tilstand,
+            totalResult
         },
         data(){
             return{
-                isModalVisible: false
-            };
+                isModalVisible: false};
         },
         methods:{
             showModal(){
@@ -260,7 +121,15 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+
+
+h1 {
+    font-size: 2rem;
+    margin: 40px 0px;
+}
+
  .main-element{
      display: flex;
      justify-content: space-evenly;
@@ -268,10 +137,24 @@
 
     .card-header{
         justify-content: space-between;
-        padding: 10px 15px 0px 15px;
+        padding: 40px 20px;
+        align-items: center;
+        box-shadow: none;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            height: 1px;
+            width: calc(100% - 70px);
+            content:'';
+            bottom: 20px;
+            left: 35px;
+            background-color: black;
+
+        }
     }
     .anv-code{
-        margin: 25px;
+        margin: 40px 0px;
     }
     .prop-card{
         display: flex;
@@ -283,4 +166,29 @@
     .prop-img{
         width: 25%;
     }
+
+    .btn-all-reset {
+        all: unset;
+        cursor: pointer;
+        margin-right: 30px;
+        img {
+            height: 50px;
+        }
+    }
+
+    .column-costum {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
 </style>
+
+
+
+
+
+
+
+
+
