@@ -1,7 +1,7 @@
 <template>
     <div class="hero is-primary">
 
-            <nav class="container hero-body level">
+            <nav class="container level">
                 <a class="level-left level-item logo-link" href="#">
                     <img class="logo-img" src="@/assets/logo.png" alt="næstved logo"/>
                 </a>
@@ -24,13 +24,19 @@
 </script>
 
 <style scoped>
+
+
     .logo-link{
         width: 5rem;
     }
     .logo-img{
-        width: 15rem;
+        width: 10rem;
     }
     .hero{
         display: block;
+        padding: 2rem;
     }
+
+
+
 </style>
