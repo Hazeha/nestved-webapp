@@ -3,7 +3,11 @@
     <div id="Tilstand" class="card content">
         <div class="card-header">
             <h2>{{mainType}}</h2>
-
+            <div>
+            <button type="button" class="anv-code btn-all-reset" @click="showModal">
+                <img src="@/assets/tool.png">
+            </button>
+            <keyCode v-show="isModalVisible" @close="closeModal"/>
             <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">
                     <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu4">+ Tilføj Kategori</button>
@@ -25,6 +29,7 @@
 
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 
@@ -83,11 +88,13 @@
 
 <script>
     import keyResults from './keyResults.vue'
+    import keyCode from './keyCode.vue'
 
     export default {
         name: "Tilstand",
         components: {
-            keyResults
+            keyResults,
+            keyCode
         },
         props:{
             mainType: String
@@ -100,12 +107,19 @@
 
                 resultValue1: 100,
                 resultValue2: 123,
-                resultValue3: 1000
+                resultValue3: 1000,
+
+                isModalVisible: false
             }
 
         },
         methods:{
-
+            showModal(){
+                this.isModalVisible = true;
+            },
+            closeModal(){
+                this.isModalVisible = false;
+            }
         }
     }
 
@@ -118,5 +132,22 @@
     .card-header{
         justify-content: space-between;
         padding: 10px 15px 0px 15px;
+    }
+
+    .btn-all-reset {
+        all: unset;
+        cursor: pointer;
+        margin-right: 30px;}
+
+    img {
+        height: 50px;
+    }
+
+
+    .column-costum {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
     }
 </style>
