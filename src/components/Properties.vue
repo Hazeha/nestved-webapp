@@ -1,13 +1,231 @@
 <template>
     <div class="container">
         <!--TODO Anvendelses kode skal videregives så koden kan anvendes-->
-<h1>Filter din søgning</h1>
+        <button type="button" class="button is-primary is-large anv-code" @click="showModal">
+            Anvendelseskode
+        </button>
 
-        <Tilstand mainType="Tilstand"></Tilstand>
-        <Tilstand mainType="Energi"></Tilstand>
-        <Tilstand mainType="Helpdesk"></Tilstand>
+        <UseageCode v-show="isModalVisible" @close="closeModal"/>
+
+        <!--TODO This needs to be made into a component-->
+        <div class="card content">
+            <div class="card-header">
+                <h2>Tilstand</h2>
+
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu4">+ Tilføj Kategori</button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <h4>Kategorier</h4>
+                                <label class="checkbox"><input type="checkbox">
+                                    Teknisk Anlæg
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Udv. belægning
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Facade og Murværk
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tag
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Udhæng og gavle
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tagdækning
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Tagrender
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Vinduer og udv. døre
+                                </label>
+                                <label class="checkbox"><input type="checkbox">
+                                    Fundament og sokkel
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table card-content">
+                <thead>
+                <tr>
+                    <th title="Faktor">Faktor</th>
+                    <th title="Indmeldinger">Indmeldinger</th>
+                    <th title="Point">Point</th>
+                    <th title="Vægtning">Vægtning</th>
+                    <th title="Resultat">Resultat</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tagrender m. Nedløb</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Vinduer & udv. Døre</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Fundament & Sokkel</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <!--TODO This needs to be made into a component-->
+        <div class="card content">
+            <div class="card-header">
+                <h2>Energi</h2>
+                <button class="button is-primary level-item">+ Tilføj Kategori</button>
+            </div>
+            <table class="table card-content">
+                <thead>
+                <tr>
+                    <th title="Faktor">Faktor</th>
+                    <th title="Indmeldinger">Indmeldinger</th>
+                    <th title="Point">Point</th>
+                    <th title="Vægtning">Vægtning</th>
+                    <th title="Resultat">Resultat</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tagrender m. Nedløb</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Vinduer & udv. Døre</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Fundament & Sokkel</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--TODO This needs to be made into a component-->
+        <div class="card content">
+            <div class="card-header">
+                <h2>Helpdesk</h2>
+                <button class="button is-primary level-item">+ Tilføj Kategori</button>
+
+            </div>
+            <table class="table card-content">
+                <thead>
+                <tr>
+                    <th title="Faktor">Faktor</th>
+                    <th title="Indmeldinger">Indmeldinger</th>
+                    <th title="Point">Point</th>
+                    <th title="Vægtning">Vægtning</th>
+                    <th title="Resultat">Resultat</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tagrender m. Nedløb</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Vinduer & udv. Døre</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>Fundament & Sokkel</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!--TODO Samlet Resultat - Skal der laves funktioner til.-->
-        <totalResult></totalResult>
+        <div class="card content">
+            <div class="card-header">
+                <h2>Samlet Resultat</h2>
+            </div>
+
+            <table class="table card-content">
+                <thead>
+                <tr>
+                    <th title="Faktor">Faktor</th>
+                    <th title="Indmeldinger">Point</th>
+                    <th title="Point">Vægtning</th>
+                    <th title="Vægtning">Samlet Point</th>
+                    <th title="Resultat">Resultat</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Tilstand</td>
+                    <td>3</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                    <td><h1 style="color: green">⦿</h1></td>
+                </tr>
+                <tr>
+                    <td>Energi</td>
+                    <td>3</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                    <td><h1 style="color: red">⦿</h1></td>
+                </tr>
+                <tr>
+                    <td>Helpdesk</td>
+                    <td>3</td>
+                    <td><input type="range"> 20%</td>
+                    <td>68</td>
+                    <td><h1 style="color: yellow">⦿</h1></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Antal Ejendomme</h4>
+            <p>God Tilstand <strong>560</strong></p>
+            <progress class="progress is-success" value="60" max="100"></progress>
+            <p>Medium Tilstand <strong>123</strong></p>
+            <progress class="progress is-warning" value="30" max="100">75%</progress>
+            <p>Dårlig Tilstand <strong>42</strong></p>
+            <progress class="progress is-danger" value="10" max="100">90%</progress>
+
+            <h4>Samlet Vurdering på 750 Ejendomme</h4>
+            <progress class="progress is-success" value="79" max="100"></progress>
+        </div>
         <!--TODO Lste over ejendomme, Skal laves så de rigtige boliger kommer frem via søgningen-->
         <div class="content">
             <h2>Liste over Ejendomme</h2>
@@ -19,7 +237,7 @@
                         <thead>
                             <tr>
                                 <th>Tilstand</th>
-                                <th>Vedligeholdelse</th>
+                                <th>vedligeholdelse</th>
                                 <th>Forurening</th>
                             </tr>
                         </thead>
@@ -92,18 +310,19 @@
 </template>
 
 <script>
+    import UseageCode from './properties/UseageCode.vue'
 
-    import Tilstand from './properties/Tilstand.vue'
-    import totalResult from './properties/totalResult.vue'
+
     export default {
         name: "Properties",
+
         components: {
-            Tilstand,
-            totalResult
+            UseageCode
         },
         data(){
             return{
-                isModalVisible: false};
+                isModalVisible: false
+            };
         },
         methods:{
             showModal(){
@@ -121,15 +340,7 @@
 
 </script>
 
-<style lang="scss" scoped>
-
-
-
-h1 {
-    font-size: 2rem;
-    margin: 40px 0px;
-}
-
+<style scoped>
  .main-element{
      display: flex;
      justify-content: space-evenly;
@@ -137,24 +348,10 @@ h1 {
 
     .card-header{
         justify-content: space-between;
-        padding: 40px 20px;
-        align-items: center;
-        box-shadow: none;
-        position: relative;
-
-        &::after {
-            position: absolute;
-            height: 1px;
-            width: calc(100% - 70px);
-            content:'';
-            bottom: 20px;
-            left: 35px;
-            background-color: black;
-
-        }
+        padding: 10px 15px 0px 15px;
     }
     .anv-code{
-        margin: 40px 0px;
+        margin: 25px;
     }
     .prop-card{
         display: flex;
@@ -166,29 +363,4 @@ h1 {
     .prop-img{
         width: 25%;
     }
-
-    .btn-all-reset {
-        all: unset;
-        cursor: pointer;
-        margin-right: 30px;
-        img {
-            height: 50px;
-        }
-    }
-
-    .column-costum {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-    }
 </style>
-
-
-
-
-
-
-
-
-
