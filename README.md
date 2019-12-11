@@ -19,6 +19,9 @@ npm run build
 ```
 npm run lint
 ```
-
+### Run css watch
+```
+npm run css-build
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
